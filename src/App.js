@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+class App extends Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    constructor(props){
+        super(props);
+        this.state = {
+            email: 'teste@teste.com',
+            senha: ''
+        }
+        this.trocaEmail = this.trocaEmail.bind(this);
+    } 
+
+    render() {
+        return( 
+           <div>
+                <h2>Login</h2>
+               Email:
+               <input Type="Email" name="email" value={this.state.email}
+                      onChange={this.trocaEmaol}/> <br/>
+               Senha:
+               <input Type="password" name="senha" value={this.state.senha} />
+            </div>
+        );
+    }
 }
 
 export default App;
